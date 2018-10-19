@@ -1,0 +1,187 @@
+.woocommerce-account {
+	.entry-header {
+		.entry-title {
+			display: none;
+		}
+	}
+}
+
+/* login */ 
+.form-account {
+	width: 310px;
+	display: block;
+	margin: 100px auto;
+
+	h2 {
+		color: $cor-txt;
+		padding: 0;
+		font-size: 1.75rem;
+		margin-bottom: 10px;
+
+		&:before, &:after {
+			display: none;
+		}
+	}
+
+	form {
+		display: none;
+		margin: 30px 0 0;
+	}
+
+	.btn-social {
+		margin-top: 20px;
+
+		.ou-login {
+			display: block;
+			margin: 0px 0;
+			text-align: center;
+			position: relative;
+
+			&:before {
+				content: '';
+				height: 1px;
+				width: 100%;
+				background: $cinza;
+				position: absolute;
+				top: 50%;
+				left: 0;
+				z-index: 0;
+			}
+
+			span {
+				font-size: 0.7rem;
+				padding: 5px;
+				background: #fff;
+				display: inline-block;
+				position: relative;
+				color: $cinza;
+			}
+		}
+	}
+
+	.txt-link {
+		text-align: center;
+		font-size: .75rem;
+		max-width: 230px;
+		display: block;
+		margin: 15px auto;
+		color: $cinza;
+
+		a {
+			font-size: .75rem;
+			text-decoration: underline;
+			color: $azul;
+		}
+	}
+
+	&.login-account {
+		display: none;
+	}
+
+	&.register-account {
+		.woocommerce-privacy-policy-text {
+			display: none;
+		}
+	}
+
+	.woocommerce-Button.button {
+
+	}
+}
+
+.woocommerce-MyAccount-navigation {
+	background-color: $azul;
+	width: 100%;
+	height: 60px;
+	padding: 15px 0;
+	@include box-sizing;
+	@include clear;
+
+	ul {
+		float: left;
+		width: 50%;
+		display: block;
+
+		li {
+			float: left;
+			padding-right: 60px;
+
+			a {
+				text-transform: uppercase;
+				color: #ffffff;
+				font-size: .8rem;
+				font-weight: $bold;
+				line-height: 6px;
+				display: block;
+				@include animacao;
+
+				&:hover {
+					color: $azul-escuro;
+				}
+			}
+
+			&.active {
+				a {
+					color: $azul-escuro;
+				}
+			}
+		}
+
+		&.links-acount {
+			float: right;
+			width: 50%;
+
+			li {
+				float: right;
+				color: #ffffff;
+				position: relative;
+
+				&.nome-user {
+					font-size: 1.225rem;
+					top: -6px;
+
+					span {
+						font-weight: $bold;
+						font-size: 1.125rem;
+						color: #fff;
+						display: block;
+					}
+				}
+
+				&.logout {
+					padding: 0;
+					font-size: .8rem;
+					top: 5px;
+
+					a {
+						font-size: .8rem;
+						display: inline;
+						font-weight: $regular;
+						text-decoration: underline;
+						text-transform: none;
+						text-transform: none;
+
+						&:hover {
+							//color: $vermelho;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+.woocommerce-orders {
+	.woocommerce-MyAccount-navigation {
+		ul {
+
+			li {
+				&.woocommerce-orders {
+					a {
+						//color: $azul-escuro;
+					}
+				}
+			}
+		}
+	}
+}

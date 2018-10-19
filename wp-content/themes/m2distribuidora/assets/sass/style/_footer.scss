@@ -1,0 +1,83 @@
+#colophon {
+	display: none;
+}
+
+.footer {
+	background-color: #d6d6d6;
+	width: 100%;
+	margin-top: 35px;
+	@include clear;
+
+	.nav-footer {
+		padding: 40px 0 30px 0;
+
+		ul {
+			li, a {
+				color: #424242;
+
+			}
+		}
+	}
+}
+
+.info-footer {
+	background-color: #4b4b4b;
+	height: 65px;
+	width: 100%;
+
+	a {
+		float: left;
+		margin: 12px 50px 0 0;
+		@include animacao;
+
+		span {
+			float: left;
+			color: #ffffff;
+			font-size: 1.3rem;
+			font-weight: 700;
+			line-height: 1rem;
+		}
+
+		img {
+			margin-right: 10px;
+			float: left;
+		}
+
+		&:hover {
+			opacity: .6;
+		}
+	}
+
+	.redes-footer {
+		float: right;
+		text-align: right;
+
+		a {
+			margin: 10px 0 0 10px;
+		}
+	}
+}
+
+.news-footer {
+	width: 100%;
+	padding: 65px 0;
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	text-align: center;
+	@include clear;
+
+	h4 {
+		color: #ffffff;
+		margin-bottom: 10px;
+	}
+
+	fieldset, button {
+		display: inline-block;
+	}
+
+	fieldset {
+		padding-right: 20px;
+		max-width: 390px;
+	}
+}

@@ -1,0 +1,131 @@
+.anuncio-topo {
+	height: 60px;
+	width: 100%;
+	overflow: hidden;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-color: #fff;
+	display: block;
+	@include clear;
+}
+
+.col-full, .storefront-primary-navigation {
+	display: none;
+}
+
+.header {
+	background-color: #162649;
+	width: 100%;
+	padding: 10px 0 75px;
+	@include clear;
+
+	h1 {
+
+	}
+
+	.header-dir {
+		display: block;
+		width: 100%;
+		padding-left: 150px;
+		box-sizing: border-box;
+	}
+
+	.busca {
+		display: table-cell;
+		width: 100%;
+
+		form {
+			display: table;
+			position: relative;
+			width: 100%;
+
+			.busca-header {
+				height: 53px;
+				width: 100%;
+				display: table-cell;
+				border: 0;
+			}
+
+			.filtro-busca {
+				display: table-cell;
+				background-color: #dddddd;
+				width: 130px;
+				padding: 0 20px;
+				line-height: 51px;
+			}
+
+			.busca-lupa {
+				width: 53px;
+				height: 53px;
+				padding: 0;
+				background-color: $vermelho;
+				position: absolute;
+				right: 0px;
+				top: 0;
+
+				img {
+					position: relative;
+					top: 7px;
+				}
+			}
+		}
+	}
+
+	.item-topo {
+		display: table-cell;
+
+		a {
+			color: #ffffff;
+			font-size: 2rem;
+		}
+
+		.login {
+			display: table;
+			vertical-align: middle;
+			width: 220px;
+			position: relative;
+			top: 3px;
+
+			img {
+				display: inline-block;
+				margin: 0px 5px 0 20px;
+				vertical-align: middle;
+
+			}
+
+			span {
+				color: #ffffff;
+				font-size: 1rem;
+				line-height: .8rem;
+				display: table-cell;
+				width: 198px;
+				vertical-align: middle;
+				top: 0px;
+				position: relative;
+			}
+		}
+
+		&.user-login {
+			border-right: 2px solid #fff;
+
+			.login {
+				padding-right: 20px;
+			}
+		}
+
+		&.carrinho {
+			.login {
+				width: auto;
+				span {
+					font-size: .6rem;
+					text-align: center;
+
+					strong {
+						font-size: 1.5rem;
+						color: #ffffff;
+					}
+				}
+			}
+		}
+	}
+}

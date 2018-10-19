@@ -1,0 +1,102 @@
+.nav-header {
+	display: block;
+	margin: 20px 0 0 0;
+	line-height: 40px;
+
+	li, * {
+		color: #fff;
+		font-size: .9rem;
+		text-transform: uppercase;
+		font-weight: $bold;
+	}
+
+	li {
+		float: left;
+		padding-right: 20px;
+
+		a {
+
+			&:hover {
+				/*opacity: .75;
+				color: #fff;
+				/*color: $vermelho;*/
+			}
+
+			&:hover, &.active {
+				color: $amarelo;
+			}
+		}
+
+		&.nav-area {
+			padding-left: 80px;
+			padding-right: 40px;
+			position: relative;
+			@include animacao;
+
+			&:hover {
+				/*opacity: .75;*/
+			}
+
+			i, span {
+				cursor: pointer;
+			}
+
+			i {
+				font-size: 1.225rem;
+				margin-right: 3px;
+
+				&.fa-angle-down {
+					font-size: 1.225rem;
+				}
+			}
+
+			span {
+				font-size: 1.225rem;
+			}
+
+			.sub-nav {
+				display: none;
+				position: absolute;
+				width: 300px;
+				top: 20px;
+				padding: 17px 0;
+				z-index: 999;
+
+				li {
+					background-color: $vermelho;
+					display: block;
+					width: 100%;
+					padding: 0 30px;
+
+					a {
+						padding: 5px 0;
+						float: left;
+					}
+
+					&:first-child {
+						padding-top: 15px;
+					}
+
+					&:last-child {
+						padding-bottom: 15px;
+					}
+				}
+			}
+
+			&:hover {
+				.sub-nav {
+					display: block;
+				}
+			}
+		}
+
+		&.nav-dir {
+			float: right;
+			padding: 0;
+
+			a {
+				padding-left: 20px;
+			}
+		}
+	}
+}

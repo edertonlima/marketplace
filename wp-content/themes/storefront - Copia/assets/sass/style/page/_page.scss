@@ -1,0 +1,23 @@
+.box-fidelidade {
+	.ico-fidelidade {
+		float: left;
+		margin-right: 20px;
+	}
+
+	h3 {
+		display: inline;
+		width: 100%;
+		font-size: 2.5rem;
+		line-height: 2.7rem;
+	}
+
+	.cont-fidelidade {
+		p, strong {
+			font-size: 1.125rem;
+		}
+
+		strong {
+			color: $azul;
+		}
+	}
+}
