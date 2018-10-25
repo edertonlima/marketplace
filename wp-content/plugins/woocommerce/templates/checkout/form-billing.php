@@ -20,12 +20,17 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly
 }
 
+
+	
+
+
 /** @global WC_Checkout $checkout */
 
 ?>
 
 
-				<h3>Seu Cadastro</h3>
+
+				<h3 id="title-passo">Meus Dados</h3>
 
 				<div class="woocommerce-billing-fields">
 					<?php /* if ( wc_ship_to_billing_address_only() && WC()->cart->needs_shipping() ) : ?>
@@ -44,7 +49,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 						<?php
 							$fields = $checkout->get_checkout_fields( 'billing' );
 
-							foreach ( $fields as $key => $field ) {
+							foreach ( $fields as $key => $field ) { //print_r($field);
 								if ( isset( $field['country_field'], $fields[ $field['country_field'] ] ) ) {
 									$field['country'] = $checkout->get_value( $field['country_field'] );
 								}
@@ -56,7 +61,12 @@ if ( ! defined( 'ABSPATH' ) ) {
 					<?php do_action( 'woocommerce_after_checkout_billing_form', $checkout ); ?>
 				</div>
 
+
+
 				<?php if ( ! is_user_logged_in() && $checkout->is_registration_enabled() ) : ?>
+
+
+
 					<div class="woocommerce-account-fields">
 						<?php if ( ! $checkout->is_registration_required() ) : ?>
 
@@ -83,4 +93,61 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 						<?php do_action( 'woocommerce_after_checkout_registration_form', $checkout ); ?>
 					</div>
+
+
 				<?php endif; ?>
+
+
+				<div class="btn-checkout-footer">
+					<a href="javascript:" class="btn btn-checkout" id="passo_dados"><i class="fa fa-chevron-left"></i> Meus Dados</a>
+					<a href="javascript:" class="btn btn-checkout" id="passo_endereco">Cadastrar Endereço <i class="fa fa-chevron-right"></i></a>
+					<a href="javascript:" class="btn btn-checkout-add" id="checkout-add"><i class="fa fa-plus"></i> Adicionar Informações</a>
+				</div>
+
+
+				<script type="text/javascript">
+					jQuery(document).ready(function(){
+
+						jQuery('#passo_dados').click(function(){
+							jQuery('#title-passo').html('Meus Dados');
+
+							jQuery('#passo_dados').hide();
+							jQuery('#passo_endereco').show();
+							
+							jQuery('#billing_first_name_field').show();
+							jQuery('#billing_last_name_field').show();
+							jQuery('#billing_phone_field').show();
+
+							jQuery('#billing_address_1_field').hide();
+							jQuery('#billing_address_2_field').hide();
+							jQuery('#billing_city_field').hide();
+							jQuery('#billing_state_field').hide();
+							jQuery('#billing_postcode_field').hide();
+						});
+
+						jQuery('#passo_endereco').click(function(){
+							jQuery('#title-passo').html('Endereço de Entrega');
+
+							jQuery('#passo_endereco').hide();
+							jQuery('#passo_dados').show();
+							
+							jQuery('#billing_first_name_field').hide();
+							jQuery('#billing_last_name_field').hide();
+							jQuery('#billing_phone_field').hide();
+
+							jQuery('#billing_address_1_field').show();
+							jQuery('#billing_address_2_field').show();
+							jQuery('#billing_city_field').show();
+							jQuery('#billing_state_field').show();
+							jQuery('#billing_postcode_field').show();
+						});
+
+					});
+				</script>
+
+				<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/assets/js/maskedinput.js"></script>
+				<script type="text/javascript">
+					jQuery(function(jQuery){
+					   jQuery("#billing_phone").mask("(99) 9999-9999?9");
+					});
+				</script>

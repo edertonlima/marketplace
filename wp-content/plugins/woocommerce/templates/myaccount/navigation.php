@@ -31,12 +31,17 @@ do_action( 'woocommerce_before_account_navigation' );
 				<a href="javascript:">MEUS<br>PONTOS</a>
 			</li>
 
-			<li class="woocommerce-orders <?php if( !isset($_GET['canceled']) ){ echo 'active'; } ?>" id="pedidos">
-				<a href="<?php echo get_home_url(); ?>/?page_id=8&orders">MEUS<br>PEDIDOS</a>
+			<li class="<?php if( (is_wc_endpoint_url( 'orders' )) and (!isset($_GET['canceled'])) ){ echo 'active'; } ?>">
+			<?php /*<li class="woocommerce-orders <?php if( !isset($_GET['canceled']) ){ echo 'active'; } ?>" id="pedidos">*/ ?>
+				<a href="<?php echo get_permalink(get_page_by_path('my-account')); ?>orders">MEUS<br>PEDIDOS</a>
 			</li>
 
 			<li class="<?php if( isset($_GET['canceled']) ){ echo 'active'; } ?>" id="pedidos-cancelados">
-				<a href="<?php echo get_home_url(); ?>/?page_id=8&orders&canceled">PEDIDOS<br>CANCELADOS</a>
+				<a href="<?php echo get_permalink(get_page_by_path('my-account')); ?>orders/?canceled">PEDIDOS<br>CANCELADOS</a>
+			</li>
+
+			<li class="<?php if( (is_edit_account_page()) or (is_wc_endpoint_url( 'edit-address' )) ){ echo 'active'; } ?>">
+				<a href="<?php echo get_permalink(get_page_by_path('my-account')); ?>edit-account">MEUS<br>DADOS</a>
 			</li>
 		</ul>
 
@@ -52,7 +57,6 @@ do_action( 'woocommerce_before_account_navigation' );
 
 			<li class="logout">
 				Não é <?php echo ucfirst($current_user->display_name); ?>? <a href="<?php echo get_home_url(); ?>/?page_id=8&customer-logout&_wpnonce=3b570ada07">Finalizar</a>
-				<a href=""></a>
 			</li>
 			<li class="nome-user">
 				<span>OLÁ, <?php echo strtoupper($current_user->display_name); ?></span>

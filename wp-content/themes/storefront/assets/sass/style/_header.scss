@@ -130,6 +130,39 @@
 
 			.login {
 				padding-right: 20px;
+
+				a {
+					&:hover {
+						color: rgba(#ffffff, .75);
+					}	
+				}
+
+				&.active {
+					&:hover {
+						span {
+							color: #ffffff!important;
+						}
+					}
+				}
+			}
+
+			.logout {
+				@include clear;
+				display: block;
+
+				a {
+					font-size: .75rem;
+					color:  $amarelo;
+					margin: 0px 0 0 63px;
+					position: relative;
+					top: -10px;
+					text-decoration: underline;
+
+					&:hover {
+						text-decoration: none;
+						color: $amarelo;
+					}
+				}
 			}
 		}
 

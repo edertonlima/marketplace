@@ -96,9 +96,107 @@ button, input[type='submit'], .btn {
 		background-color: $amarelo;
 		color: #ffffff;
 		width: 100%;
+		margin-bottom: 20px;
+
+		i {
+			color: #ffffff;
+		}
 
 		&:hover {
 			background-color: darken($amarelo, 10%);
+		}
+	}
+
+	&.btn-salvar {
+		background-color: $amarelo;
+		color: #ffffff;
+		width: 100%;
+		margin-bottom: 20px;
+
+		i {
+			color: #ffffff;
+		}
+
+		&:hover {
+			background-color: darken($amarelo, 10%);
+		}
+	}
+
+	&.btn-account {
+		background-color: $azul;
+		color: #ffffff;
+		width: auto;
+		padding: 0 10px;
+		font-size: .75rem;
+		line-height: 32px;
+		height: 33px;
+		margin: 40px 10px 0 0;
+
+		i {
+			font-size: .75rem;
+		}
+
+		&:hover {
+			background-color: darken($azul, 10%);
+		}
+	}
+
+	&.btn-review-order {
+		background-color: $azul;
+		color: #ffffff;
+		width: auto;
+		padding: 0 10px;
+		font-size: .75rem;
+		line-height: 32px;
+		height: 33px;
+		margin-bottom: 20px;
+
+		i {
+			font-size: .75rem;
+		}
+
+		&:hover {
+			background-color: darken($azul, 10%);
+		}
+	}
+
+	&.btn-checkout {
+		background-color: $azul;
+		color: #ffffff;
+		width: auto;
+		padding: 0 10px;
+		font-size: .75rem;
+		line-height: 32px;
+		height: 33px;
+		margin-bottom: 20px;
+		float: left;
+
+		i {
+			font-size: .75rem;
+		}
+
+		&:hover {
+			background-color: darken($azul, 10%);
+		}
+	}
+	&.btn-checkout-add {
+		background-color: #dddddd;
+		color: #000000;
+		width: auto;
+		padding: 0 10px;
+		font-size: .75rem;
+		line-height: 32px;
+		height: 33px;
+		margin-bottom: 20px;
+		float: left;
+
+		i {
+			font-size: .75rem;
+			color: #000000;
+		}
+
+		&:hover {
+			background-color: darken(#dddddd, 10%);
 		}
 	}
 
@@ -325,13 +423,12 @@ fieldset {
 
 .select {
 	overflow: hidden;
-	background-color: $cinza-escuro;
-	line-height: 44px;
-	height: 40px;
+	line-height: 43px;
+	height: 43px;
 	padding: 0 0 0 10px;
-	margin-bottom: 20px;
 	display: block;
 	position: relative;
+	border: 1px solid $cinza;
 	@include box-sizing();
 
 	select {
@@ -340,7 +437,7 @@ fieldset {
 		background-color: transparent;
 		font-weight: $regular;
 		font-size: .875rem;
-		color: #ffffff;
+		color: $cinza-escuro;
 		box-sizing: content-box;
 		position: relative;
 		z-index: 99;
@@ -349,7 +446,7 @@ fieldset {
 
 	&:after {
 		content: "\f107";
-		color: #ffffff;
+		color: $cinza-escuro;
 		position: absolute;
 		right: 13px;
 		top: 13px;

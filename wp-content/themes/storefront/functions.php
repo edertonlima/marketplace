@@ -91,3 +91,51 @@ function woocommerce_cart_loaded_from_session($session_cart) {
     }
     $session_cart->cart_contents = $cart_contents;
 }
+
+
+add_action( 'parse_request', 'redirect_to_my_account_orders' );
+function redirect_to_my_account_orders( $wp ) {
+    // All other endpoints such as change-password will redirect to
+    // my-account/orders
+    //$allowed_endpoints = [ 'orders', 'edit-account', 'customer-logout' ];
+
+    /*if (
+        preg_match( '%^my\-account(?:/([^/]+)|)/?$%', $wp->request, $m ) 
+    ) {
+
+    	//&&( empty( $m[1] ) || ! in_array( $m[1], $allowed_endpoints ) )
+
+    	//$url = get_home_url().'';
+        //wp_redirect( $url );
+        //exit;
+
+
+        print_r( $wp->request );
+
+    }*/
+
+    $url_myaccount = explode('my-account/', $wp->request);
+    //print_r($url_myaccount);
+    //echo count($url_myaccount);
+
+    //echo get_permalink(get_page_by_path('my-account/orders'));
+
+    $myaccount_orders = get_permalink( wc_get_page_id( 'myaccount' ) ).'orders';
+    
+    if(count($url_myaccount) == 1){
+    	//echo count($url_myaccount);
+    	//$url = get_permalink( wc_get_page_id( 'myaccount/orders' ) );//get_permalink(get_page_by_path('my-account/orders'));*/
+        
+
+        wp_redirect( $myaccount_orders );
+        exit;
+
+
+    }else{
+        if($url_myaccount[1] == 'edit-address'){
+            $myaccount_address = get_permalink( wc_get_page_id( 'myaccount' ) ).'edit-account';
+            wp_redirect( $myaccount_address );
+            exit;
+        }
+    }
+}

@@ -7,7 +7,7 @@
 }
 
 /* login */ 
-.form-account {
+.form-account, .form-login {
 	width: 310px;
 	display: block;
 	margin: 100px auto;
@@ -156,10 +156,11 @@
 					a {
 						font-size: .8rem;
 						display: inline;
-						font-weight: $regular;
+						font-weight: $bold;
 						text-decoration: underline;
 						text-transform: none;
 						text-transform: none;
+						padding-left: 5px;
 
 						&:hover {
 							//color: $vermelho;
@@ -183,5 +184,108 @@
 				}
 			}
 		}
+	}
+}
+
+.campos-login {
+	display: none;
+}
+.lost_password, .woocommerce-form__label.woocommerce-form__label-for-checkbox.inline { //temp
+	display: none;
+}
+
+
+.my-account {
+	padding: 100px 0;
+
+	h3 {
+		color: $cor-txt;
+		padding: 0;
+		font-size: 1.75rem;
+		margin-bottom: 10px;
+	}
+
+	.block-dados {
+		display: block;
+		width: 100%;
+		padding: 15px 0 0px;
+
+		&.block-endereco {
+			margin-top: 20px;
+		}
+
+		.title {
+			font-size: .65rem;
+			//color: $azul;
+			display: block;
+			font-weight: $bold;
+
+			&.endereco {
+				font-size: .75rem;
+				margin-top: 20px;
+				text-transform: uppercase;
+			}
+		}
+
+		.info-princ {
+			font-size: 1.75rem;
+			display: block;
+			line-height: 1.75rem;
+			font-weight: $regular;
+			color: $azul;
+
+			&.duplo {
+				//margin-top: 20px;
+			}
+		}
+
+		.info-sec {
+			font-size: .85rem;
+			display: block;
+			//color: $azul;
+			font-weight: $light;
+		}
+
+		.link-edit {
+			//margin-top: 5px;
+			float: left;
+			font-size: .75rem;
+			color: $azul;
+			text-decoration: underline;
+
+			&:hover {
+				text-decoration: none;
+			}
+		}
+	}
+
+	&.meus-dados {
+		width: 100%;
+		max-width: 500px;
+		margin: 0 auto;
+		display: block;
+
+		&.edit-address {
+			#billing_first_name_field, #billing_last_name_field, #billing_country_field, #billing_address_1_field, #billing_address_2_field, #billing_city_field, #billing_state_field, #billing_postcode_field {
+				display: block;
+				width: 100%;
+				padding: 0;
+				float: none;
+			}
+
+			#billing_phone_field {
+				width: 100%;
+				padding: 0;
+			}
+		}
+	}
+
+	#form-dados, #form-senha, #form-btn {
+		display: none;
+	}
+
+	.form-edit {
+		width: 100%;
+		margin: 0;
 	}
 }

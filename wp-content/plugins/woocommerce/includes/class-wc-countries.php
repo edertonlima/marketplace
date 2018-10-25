@@ -629,13 +629,13 @@ class WC_Countries {
 				'autocomplete' => 'family-name',
 				'priority'     => 20,
 			),
-			'company'    => array(
+			/*'company'    => array(
 				'label'        => __( 'Company name', 'woocommerce' ),
 				'class'        => array( 'form-row-wide' ),
 				'autocomplete' => 'organization',
 				'priority'     => 30,
 				'required'     => 'required' === get_option( 'woocommerce_checkout_company_field', 'optional' ),
-			),
+			),*/
 			'country'    => array(
 				'type'         => 'country',
 				'label'        => __( 'Country', 'woocommerce' ),
@@ -661,13 +661,6 @@ class WC_Countries {
 				'priority'     => 60,
 				'required'     => 'required' === get_option( 'woocommerce_checkout_address_2_field', 'optional' ),
 			),
-			'city'       => array(
-				'label'        => __( 'Town / City', 'woocommerce' ),
-				'required'     => true,
-				'class'        => array( 'form-row-wide', 'address-field' ),
-				'autocomplete' => 'address-level2',
-				'priority'     => 70,
-			),
 			'state'      => array(
 				'type'         => 'state',
 				'label'        => __( 'State / County', 'woocommerce' ),
@@ -676,6 +669,13 @@ class WC_Countries {
 				'validate'     => array( 'state' ),
 				'autocomplete' => 'address-level1',
 				'priority'     => 80,
+			),
+			'city'       => array(
+				'label'        => __( 'Town / City', 'woocommerce' ),
+				'required'     => true,
+				'class'        => array( 'form-row-wide', 'address-field' ),
+				'autocomplete' => 'address-level2',
+				'priority'     => 70,
 			),
 			'postcode'   => array(
 				'label'        => __( 'Postcode / ZIP', 'woocommerce' ),

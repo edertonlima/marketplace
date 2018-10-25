@@ -22,10 +22,12 @@ if ( is_user_logged_in() || 'no' === get_option( 'woocommerce_enable_checkout_lo
 }
 
 ?>
-<div class="woocommerce-form-login-toggle">
-	<?php wc_print_notice( apply_filters( 'woocommerce_checkout_login_message', __( 'Returning customer?', 'woocommerce' ) ) . ' <a href="#" class="showlogin">' . __( 'Click here to login', 'woocommerce' ) . '</a>', 'notice' ); ?>
+
+
+<div class="woocommerce-form-login-toggle woocommerce-message">
+	<?php wc_print_notice( apply_filters( 'woocommerce_checkout_login_message', __( 'Returning customer?', 'woocommerce' ) ) . ' <a href="'.get_permalink(get_page_by_path('my-account')).'" class="showlogin btn btn-mensagem button">' . __( 'Click here to register', 'woocommerce' ) . '</a>', 'notice' ); ?>
 </div>
-<?php
+<?php 
 
 woocommerce_login_form(
 	array(

@@ -238,6 +238,23 @@
 				<div class="item-topo user-login">
 					<?php if( is_user_logged_in() ){ ?>
 
+						<?php global $current_user;
+							wp_get_current_user();
+
+							//var_dump($current_user);
+							//echo 'Username: ' . $current_user->user_login . "\n";
+							//echo 'User display name: ' . $current_user->display_name . "\n";
+						?>
+
+						<span class="login active">
+							<img src="<?php echo get_template_directory_uri(); ?>/assets/images/user.png">
+							<span>Olá, <?php echo strtoupper($current_user->display_name); ?></span>
+						</span>
+
+						<span class="logout">
+							<a href="<?php echo get_home_url(); ?>/?page_id=8&customer-logout&_wpnonce=3b570ada07" title="Finalizar">Finalizar</a>
+						</span>
+
 					<?php }else{ ?>
 
 						<a href="<?php echo get_permalink(get_page_by_path('my-account')); ?>" class="login">
@@ -311,12 +328,12 @@
 						<a href="<?php echo get_home_url(); ?>/product-category/ofertas" class="<?php if(term_exists( 'Uncategorized', 'product-category' )){ echo 'active'; } ?>">OFERTAS DO DIA</a>
 					</li>
 					<li>
-						<a href="<?php echo get_home_url(); ?>/?page_id=8&orders" class="<?php if(is_page('my-account')){ echo 'active'; } ?>">MINHA CONTA</a>
+						<a href="<?php echo get_permalink(get_page_by_path('my-account')); ?>" class="<?php if(is_page('my-account')){ echo 'active'; } ?>">MINHA CONTA</a>
 					</li>
 					<li class="nav-dir">
 						<a href="<?php echo get_permalink(get_page_by_path('fidelidade')); ?>" class="<?php if(is_page('fidelidade')){ echo 'active'; } ?>"><?php echo get_the_title(get_page_by_path('fidelidade')); ?></a>
 						<a href="<?php echo get_permalink(get_page_by_path('venda-conosco')); ?>" class="<?php if(is_page('venda-conosco')){ echo 'active'; } ?>"><?php echo get_the_title(get_page_by_path('venda-conosco')); ?></a>
-						<a href="<?php echo get_home_url(); ?>/?page_id=8&orders<?php  //echo get_permalink(get_page_by_path('my-account')); ?>" class="<?php if(is_page('my-account')){ echo 'active'; } ?>">MEUS PEDIDOS</a>
+						<a href="<?php echo get_permalink(get_page_by_path('my-account')); ?>orders" class="<?php if( is_wc_endpoint_url( 'orders' ) ){ echo 'active'; } ?>">MEUS PEDIDOS</a>
 					</li>
 				</ul>
 			</nav>

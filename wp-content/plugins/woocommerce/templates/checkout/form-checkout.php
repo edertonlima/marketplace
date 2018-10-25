@@ -32,6 +32,12 @@ if ( ! $checkout->is_registration_enabled() && $checkout->is_registration_requir
 
 ?>
 
+
+
+<?php if ( is_user_logged_in() ) { ?>
+
+
+
 <section class="detalhe-pagamento">
 	<div class="container">
 		<div class="row">
@@ -55,6 +61,8 @@ if ( ! $checkout->is_registration_enabled() && $checkout->is_registration_requir
 				<div class="col-4">
 					<div class="cart-collaterals">
 
+						<a href="<?php echo get_permalink(get_page_by_path('cart')); ?>" class="btn btn-review-order"><i class="fa fa-chevron-left"></i> Revisar Pedido</a>
+
 						<h3 id="order_review_heading"><?php _e( 'Resumo do seu pedido:', 'woocommerce' ); ?></h3>
 
 						<?php do_action( 'woocommerce_checkout_before_order_review' ); ?>
@@ -73,3 +81,7 @@ if ( ! $checkout->is_registration_enabled() && $checkout->is_registration_requir
 </section>
 
 <?php do_action( 'woocommerce_after_checkout_form', $checkout ); ?>
+
+
+
+<?php } ?>

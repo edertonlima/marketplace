@@ -17,6 +17,8 @@
  * @version 2.6.0
  */
 
+//wp_redirect( '' );
+
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
