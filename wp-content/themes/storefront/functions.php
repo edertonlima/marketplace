@@ -127,15 +127,15 @@ function redirect_to_my_account_orders( $wp ) {
     	//$url = get_permalink( wc_get_page_id( 'myaccount/orders' ) );//get_permalink(get_page_by_path('my-account/orders'));*/
         
 
-        wp_redirect( $myaccount_orders );
-        exit;
+        //wp_redirect( $myaccount_orders );
+        //exit;
 
 
     }else{
-        if($url_myaccount[1] == 'edit-address'){
+        /*if($url_myaccount[1] == 'edit-address'){
             $myaccount_address = get_permalink( wc_get_page_id( 'myaccount' ) ).'edit-account';
             wp_redirect( $myaccount_address );
             exit;
-        }
+        }*/
     }
 }

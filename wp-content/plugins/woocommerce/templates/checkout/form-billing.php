@@ -33,7 +33,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 				<h3 id="title-passo">Meus Dados</h3>
 
 				<div class="woocommerce-billing-fields">
-					<?php /* if ( wc_ship_to_billing_address_only() && WC()->cart->needs_shipping() ) : ?>
+					<?php  if ( wc_ship_to_billing_address_only() && WC()->cart->needs_shipping() ) : ?>
 
 						<h3><?php _e( 'Billing &amp; Shipping', 'woocommerce' ); ?></h3>
 
@@ -41,7 +41,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 						<h3><?php _e( 'Detalhe de pagamento', 'woocommerce' ); ?></h3>
 
-					<?php endif; */ ?>
+					<?php endif;  ?>
 
 					<?php do_action( 'woocommerce_before_checkout_billing_form', $checkout ); ?>
 

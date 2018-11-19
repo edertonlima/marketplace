@@ -68,7 +68,7 @@ $totals = $order->get_order_item_totals();
 	</table>
 
 	<div id="payment">
-		<?php /* if ( $order->needs_payment() ) : ?>
+		<?php  if ( $order->needs_payment() ) : ?>
 			<ul class="wc_payment_methods payment_methods methods">
 				<?php
 				if ( ! empty( $available_gateways ) ) {
@@ -80,7 +80,7 @@ $totals = $order->get_order_item_totals();
 				}
 				?>
 			</ul>
-		<?php endif; */ ?>
+		<?php endif;  ?>
 		<div class="form-row">
 			<input type="hidden" name="woocommerce_pay" value="1" />
 

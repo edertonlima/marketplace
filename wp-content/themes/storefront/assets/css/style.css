@@ -3090,6 +3090,19 @@ fieldset {
   margin: 20px 0 20px !important;
   color: #ED7304; }
 
+.woocommerce-customer-logout .woocommerce-message a {
+  background-color: #d0021b;
+  color: #ffffff;
+  display: inline-block;
+  width: auto;
+  font-size: .8rem;
+  padding: 0 10px;
+  line-height: 30px;
+  height: 30px;
+  margin-left: 10px; }
+  .woocommerce-customer-logout .woocommerce-message a:hover {
+    background-color: #9d0214; }
+
 .nav-header {
   display: block;
   margin: 20px 0 0 0;
@@ -4344,9 +4357,6 @@ fieldset {
 .woocommerce-Price-amount .woocommerce-Price-currencySymbol {
   padding-right: 5px; }
 
-#billing_country_field, #billing_address_1_field, #billing_address_2_field, #billing_city_field, #billing_state_field, #billing_postcode_field, #billing_email_field, .woocommerce-additional-fields {
-  display: none; }
-
 #billing_first_name_field, #billing_last_name_field, #billing_country_field, #billing_address_1_field, #billing_address_2_field, #billing_city_field, #billing_state_field, #billing_postcode_field, #billing_phone_field, #billing_email_field {
   width: 50%;
   padding: 0 5px;
@@ -4368,8 +4378,6 @@ fieldset {
     content: ''; }
   .btn-checkout-footer:after {
     clear: both; }
-  .btn-checkout-footer #passo_dados, .btn-checkout-footer #checkout-add {
-    display: none; }
 
 #billing_address_2_field {
   margin-top: 21px; }
@@ -4690,5 +4698,3 @@ fieldset {
     width: 100%;
     text-align: center;
     top: 6px; } }
-
-/*# sourceMappingURL=style.css.map */

@@ -463,3 +463,24 @@ fieldset {
 	margin: 20px 0 20px !important;
 	color: $laranja;
 }
+
+
+.woocommerce-customer-logout {
+	.woocommerce-message {
+		a {
+			background-color: $vermelho;
+			color: #ffffff;
+			display: inline-block;
+			width: auto;
+			font-size: .8rem;
+			padding: 0 10px;
+			line-height: 30px;
+			height: 30px;
+			margin-left: 10px;
+
+			&:hover {
+				background-color: darken($vermelho, 10%);
+			}
+		}
+	}
+}

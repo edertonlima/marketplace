@@ -126,7 +126,7 @@
 }
 
 #billing_country_field, #billing_address_1_field, #billing_address_2_field, #billing_city_field, #billing_state_field, #billing_postcode_field, #billing_email_field, .woocommerce-additional-fields {
-	display: none;
+	//display: none;
 }
 
 #billing_first_name_field, #billing_last_name_field, #billing_country_field, #billing_address_1_field, #billing_address_2_field, #billing_city_field, #billing_state_field, #billing_postcode_field, #billing_phone_field, #billing_email_field {
@@ -146,7 +146,7 @@
 	@include clear;
 
 	#passo_dados, #checkout-add {
-		display: none;
+		//display: none;
 	}
 }
 
