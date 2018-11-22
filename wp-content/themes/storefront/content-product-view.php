@@ -43,17 +43,17 @@
 			<div class="col-6">
 				<div class="galeria-prod">
 					<div class="img-prod">
-						<img src="<?php echo $imagem[0]; ?>" alt="<?php the_title(); ?>">
+						<img src="<?php echo $imagem[0]; ?>" alt="<?php the_title(); ?>" id="image_gal_princ">
 					</div>
 
 					<?php
 						$gallery_image_ids = $product->gallery_image_ids;
 						if(count($gallery_image_ids)){ ?>
 
-							<ul>
+							<ul class="galeria-slide owl-carousel owl-theme">
 								<?php foreach ($gallery_image_ids as $key => $value) { ?>
 
-									<li><a href="javascript:"><img src="<?php echo wp_get_attachment_image_src( $value , 'thumbnail' )[0]; ?>"></a></li>
+									<li class="item"><a href="javascript:" class="item-galeria"><img src="<?php echo wp_get_attachment_image_src( $value , '' )[0]; ?>"></a></li>
 
 								<?php } ?>
 							</ul>
@@ -274,6 +274,15 @@
 </article><!-- #post-## -->
 
 <script type="text/javascript">
+	jQuery.noConflict();
+
+	jQuery('.item-galeria').click(function(){
+		url_image = jQuery('img',this).attr('src');
+		jQuery('#image_gal_princ').attr('src',url_image);
+		//jQuery('#image_gal_princ').attr('src','ok');
+	});
+
+
 		jQuery("#comprar").click(function(){
 
 				/*var data = {};
@@ -295,4 +304,32 @@
 				});*/
 		});
 	
+</script>
+
+<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/assets/js/owl.carousel.min.js"></script>
+<script type="text/javascript">
+	jQuery.noConflict();
+	var owl = jQuery('.galeria-slide');
+	owl.owlCarousel({
+		margin: 0,
+		loop: false,
+		nav:true,
+		margin: 20,
+	    responsive:{
+	        0:{
+	            items:2,
+	            nav:true
+	        },
+	        600:{
+	            items:3,
+	            nav:true
+	        },
+	        1000:{
+	            items:4,
+	            nav:true,
+	        }
+	    },
+		navText: ['<i class="fa fa-angle-left" aria-hidden="true"></i>', '<i class="fa fa-angle-right" aria-hidden="true"></i>'],
+		navClass: ['owl-prev', 'owl-next']
+	})
 </script>

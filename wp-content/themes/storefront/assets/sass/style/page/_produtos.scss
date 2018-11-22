@@ -281,16 +281,51 @@
 
 	ul {
 		display: block;
-		padding: 20px 40px 20px 20px;
+		padding: 20px 60px 20px 40px;
 
 		li {
 			display: inline-block;
-			width: 19%;
 
 			img {
 				width: 100%;
 				display: block;
 			}
+		}
+	}
+
+	.owl-nav {
+		height: 0;
+		position: absolute;
+		top: 50%;
+		width: 100%;
+		left: 0;
+		@include box-sizing;
+
+		.owl-prev, .owl-next {
+			position: absolute;
+			margin-top: -17px;
+
+			i {
+				font-size: 40px;
+				color: $azul;
+			}
+
+			&.disabled {
+				opacity: .5;
+			}
+
+			&:hover {
+				i {
+					color: $vermelho;
+				}
+			}
+		}
+
+		.owl-prev {
+			left: 10px;
+		}
+		.owl-next {
+			right: 30px;
 		}
 	}
 }
@@ -644,6 +679,13 @@
 
 
 /* CARRINHO */
+.right-sidebar .content-area {
+    width: 100%;
+    float: left;
+    margin-right: 0%;
+}
+
+
 .woocommerce-cart {
 	.entry-header {
 		display: none;

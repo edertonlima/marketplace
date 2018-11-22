@@ -3891,13 +3891,35 @@ fieldset {
       max-width: 100%; }
   .galeria-prod ul {
     display: block;
-    padding: 20px 40px 20px 20px; }
+    padding: 20px 60px 20px 40px; }
     .galeria-prod ul li {
-      display: inline-block;
-      width: 19%; }
+      display: inline-block; }
       .galeria-prod ul li img {
         width: 100%;
         display: block; }
+  .galeria-prod .owl-nav {
+    height: 0;
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    left: 0;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box; }
+    .galeria-prod .owl-nav .owl-prev, .galeria-prod .owl-nav .owl-next {
+      position: absolute;
+      margin-top: -17px; }
+      .galeria-prod .owl-nav .owl-prev i, .galeria-prod .owl-nav .owl-next i {
+        font-size: 40px;
+        color: #4a90e2; }
+      .galeria-prod .owl-nav .owl-prev.disabled, .galeria-prod .owl-nav .owl-next.disabled {
+        opacity: .5; }
+      .galeria-prod .owl-nav .owl-prev:hover i, .galeria-prod .owl-nav .owl-next:hover i {
+        color: #d0021b; }
+    .galeria-prod .owl-nav .owl-prev {
+      left: 10px; }
+    .galeria-prod .owl-nav .owl-next {
+      right: 30px; }
 
 .info-compra {
   padding: 20px;
@@ -4132,6 +4154,11 @@ fieldset {
     margin-bottom: 5px; }
 
 /* CARRINHO */
+.right-sidebar .content-area {
+  width: 100%;
+  float: left;
+  margin-right: 0%; }
+
 .woocommerce-cart .entry-header {
   display: none; }
 
