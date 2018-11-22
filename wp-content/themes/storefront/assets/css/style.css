@@ -4171,6 +4171,8 @@ fieldset {
   background-color: #f1f1f1;
   padding: 30px;
   margin: 50px 0; }
+  .cart-collaterals table th, .cart-collaterals table td {
+    background-color: transparent !important; }
   .cart-collaterals .cart_totals .tit {
     font-weight: 700;
     display: block;
@@ -4344,10 +4346,14 @@ fieldset {
   width: 80px; }
 .carrinho .actions .coupon {
   display: none; }
-.carrinho th.product-entrega {
-  text-align: center; }
-.carrinho td.entrega {
-  text-align: center; }
+.carrinho th {
+  background-color: transparent !important; }
+  .carrinho th.product-entrega {
+    text-align: center; }
+.carrinho td {
+  background-color: transparent !important; }
+  .carrinho td.entrega {
+    text-align: center; }
 .carrinho tr.info-vendedor td {
   border: none !important;
   padding: 20px 20px 40px; }
@@ -4416,6 +4422,9 @@ fieldset {
 
 #billing_address_2_field {
   margin-top: 21px; }
+
+#payment .payment_methods > li .payment_box, #payment .place-order, #order_review {
+  background-color: transparent !important; }
 
 .woocommerce-account .entry-header .entry-title {
   display: none; }

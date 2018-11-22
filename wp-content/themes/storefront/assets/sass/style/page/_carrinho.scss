@@ -19,12 +19,14 @@
  	}
 
 	th {
+		background-color: transparent!important;
 		&.product-entrega {
 			text-align: center;
 		}
  	}
 
  	td {
+ 		background-color: transparent!important;
  		&.entrega {
  			text-align: center;
  		}
@@ -152,4 +154,8 @@
 
 #billing_address_2_field {
 	margin-top: 21px;
+}
+
+#payment .payment_methods > li .payment_box, #payment .place-order, #order_review {
+	background-color: transparent!important;
 }
