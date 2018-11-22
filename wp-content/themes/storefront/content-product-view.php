@@ -8,7 +8,7 @@
 ?>
 
 <?php
-	$imagem = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'medium' ); 
+	$imagem = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), '' ); 
 	$product = wc_get_product( $post->ID ); 
 	//var_dump($post);
 	//var_dump($product);
@@ -65,25 +65,31 @@
 			</div>
 
 			<div class="col-6">
-				<div class="preco-unid">
+				<div class="preco-unid" style="width: 100%!important; border: none;">
 					<span class="det-qtd"></span>
-					<span class="">Pacote com 500 un.</span>
-					<span class="preco">R$ 20,00</span>
-					<span class="det-preco">cada pacote</span>
+					<span class=""><?php echo get_the_terms( $post->ID, 'pa_tipo-de-embalagem' )[0]->name; ?> com <?php echo get_the_terms( $post->ID, 'pa_qtd-da-embalagem' )[0]->name; ?> un.</span>
+					<span class="preco"><?php echo $product->get_price_html(); ?></span>
+					<span class="det-preco">cada <?php echo get_the_terms( $post->ID, 'pa_tipo-de-embalagem' )[0]->name; ?></span>
 				</div>
-
+				<?php /*
 				<div class="preco-atacado">
 					<span class="det-qtd">Compras acima de 10 pacotes</span>
 					<span class="">Pacote com 500 un.</span>
 					<span class="preco">R$ 16,00</span>
 					<span class="det-preco">cada pacote</span>
 				</div>
+				*/ ?>
+
+
+				<?php 
+				//var_dump($WCMp);
+ ?>
 
 				<ul class="info-compra">
-					<li>Parcela até 6 vezes sem juros</li>
-					<li class="no-border">Vendido por: <a href="javascript:">Super Festa Casa de Embalagens</a></li>
-					<li>Pedido mínimo exigido pelo vendedor: <span>R$ 150,00</span></li>
-					<li class="no-border">Em estoque. Envio realizado por correios.</li>
+					<?php /* <li>Parcela até 6 vezes sem juros</li>*/?>
+					<?php /*<li class="no-border">Vendido por: <a href="javascript:"></a></li>*/ ?>
+					<?php /*<li>Pedido mínimo exigido pelo vendedor: <span>R$ 150,00</span></li>
+					<li class="no-border">Em estoque. Envio realizado por correios.</li>*/ ?>
 					<li>
 						Digite seu CEP para calcular frete e prazo
 						<form action="javascript:" class="calcular-frete">
@@ -127,10 +133,11 @@
 					</span>
 					<span class="titulo"><?php the_title(); ?></span>
 					<span class="medida">60mm x 50mm</span>
-					<span class="quantidade">200 unidades por caixa</span>
+					<span class="quantidade"><?php echo get_the_terms( $post->ID, 'pa_qtd-da-embalagem' )[0]->name; ?> unidades por <?php echo get_the_terms( $post->ID, 'pa_tipo-de-embalagem' )[0]->name; ?></span>
 					<span class="preco">
 						<span class="valor <?php if($product->sale_price != ''){ echo 'sale'; } ?>"><?php echo $product->get_price_html(); ?></span>
-						<span class="det">cada caixa</span>
+						<span class="det">cada <?php echo get_the_terms( $post->ID, 'pa_tipo-de-embalagem' )[0]->name; ?></span>
+						
 					</span>
 				</a>
 			</div>
@@ -147,11 +154,8 @@
 			<div class="cont-prod">
 				<span class="tit"><?php the_title(); ?></span>
 
-				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas cursus aliquet eros, quis semper ex consequat sodales. Fusce massa magna, elementum vehicula interdum non, rutrum quis nunc. Vivamus pretium eleifend neque vel pretium. Phasellus pretium urna a purus maximus, at suscipit eros faucibus. Sed at dapibus nunc. Etiam quis lobortis dui, ac malesuada metus. Quisque pharetra ligula id neque venenatis varius. Vestibulum eu nulla rutrum, condimentum justo a, commodo nisl. Cras fermentum dignissim tincidunt. Duis scelerisque hendrerit rhoncus. Aliquam quis lobortis elit. Quisque rhoncus gravida leo, et bibendum ligula. Morbi tempor nibh non justo egestas, vel efficitur quam pulvinar. Vivamus dapibus neque sed nulla vulputate vulputate et vel lacus. Suspendisse ac tincidunt nisl, eu condimentum massa.
+				<?php the_content(); ?>
 
-				Aenean id euismod turpis, in mollis sem. Nullam vehicula, nisi ac iaculis viverra, tortor orci vehicula sapien, sit amet eleifend odio risus nec risus. Nunc at faucibus purus. Morbi consectetur orci ac lorem maximus pretium. In hac habitasse platea dictumst. Fusce ultricies tincidunt facilisis. Cras malesuada lectus vitae venenatis efficitur. Nam vitae erat rhoncus, malesuada dui id, dapibus libero.
-
-				Maecenas suscipit leo id turpis interdum efficitur at blandit ligula. Suspendisse eu sapien quis ipsum laoreet mattis et vitae mauris. Integer mi turpis, maximus ut tincidunt ac, maximus id erat. Nullam scelerisque vitae enim in sollicitudin. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nam consectetur semper eros, quis tincidunt mauris ultrices et. Curabitur in massa orci. Donec blandit massa sed sapien venenatis, non venenatis purus consectetur. Etiam varius dui pellentesque tristique mollis. Curabitur cursus magna eget sem interdum porttitor. Donec semper eros ut massa tristique interdum. Donec lobortis dictum interdum.
 			</div>		
 		</div>
 

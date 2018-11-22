@@ -2488,7 +2488,7 @@ h1 {
   display: table;
   padding: 0;
   float: left;
-  width: 130px;
+  width: 180px;
   position: absolute;
   -moz-transition: all 0.2s ease 0s;
   -webkit-transition: all 0.2s ease 0s;
@@ -2497,7 +2497,7 @@ h1 {
     display: table-cell;
     vertical-align: middle; }
     h1 a img {
-      width: 85%;
+      width: 100%;
       margin: 0px auto;
       display: block;
       -moz-transition: all 0.2s ease 0s;
@@ -3667,10 +3667,10 @@ fieldset {
     top: 10px;
     width: 100%; }
     .slide-categoria .owl-nav .owl-prev, .slide-categoria .owl-nav .owl-next {
-      background-color: rgba(255, 255, 255, 0.5);
+      background-color: rgba(255, 255, 255, 0.75);
       position: absolute;
       height: 110px;
-      width: 80px;
+      width: 50px;
       text-align: center;
       -moz-transition: all 0.2s ease 0s;
       -webkit-transition: all 0.2s ease 0s;
@@ -3678,7 +3678,7 @@ fieldset {
       .slide-categoria .owl-nav .owl-prev i, .slide-categoria .owl-nav .owl-next i {
         color: #d0021b;
         text-shadow: 0px 1px 1px #333;
-        font-size: 3rem;
+        font-size: 3.25rem;
         line-height: 110px;
         -moz-transition: all 0.2s ease 0s;
         -webkit-transition: all 0.2s ease 0s;
@@ -3692,9 +3692,9 @@ fieldset {
         .slide-categoria .owl-nav .owl-prev.disabled:hover, .slide-categoria .owl-nav .owl-next.disabled:hover {
           background-color: rgba(255, 255, 255, 0.5); }
     .slide-categoria .owl-nav .owl-prev {
-      left: -20px; }
+      left: 20px; }
     .slide-categoria .owl-nav .owl-next {
-      right: -20px; }
+      right: 20px; }
 
 .prod-list {
   width: 20%;
@@ -3765,7 +3765,7 @@ fieldset {
       					}*/ }
     .prod-list .preco .det {
       float: left;
-      width: 40px;
+      width: 45px;
       font-weight: 700;
       line-height: .9rem;
       margin-top: 3px;
@@ -3863,7 +3863,7 @@ fieldset {
     text-transform: uppercase;
     margin-bottom: 10px;
     display: block; }
-  .prod-det .preco-unid .preco, .prod-det .preco-atacado .preco {
+  .prod-det .preco-unid .preco, .prod-det .preco-unid .preco *, .prod-det .preco-atacado .preco, .prod-det .preco-atacado .preco * {
     font-size: 2.5rem;
     color: #d0021b;
     float: left;
@@ -3900,7 +3900,8 @@ fieldset {
         display: block; }
 
 .info-compra {
-  padding: 20px; }
+  padding: 20px;
+  max-width: 500px; }
   .info-compra li {
     border-bottom: 1px solid #a3a6aa;
     display: block;
@@ -3917,10 +3918,14 @@ fieldset {
     .info-compra li a {
       color: #4a90e2;
       text-decoration: underline; }
+      .info-compra li a.btn-comprar {
+        text-decoration: none; }
     .info-compra li span {
       color: #d0021b; }
     .info-compra li form {
       margin: 10px 0 20px; }
+  .info-compra #form-comprar {
+    width: 100%; }
 
 .calcular-frete {
   width: 100%; }
@@ -3928,9 +3933,11 @@ fieldset {
     float: left; }
   .calcular-frete input {
     width: 70%;
-    margin-right: 5%; }
+    margin-right: 3%; }
   .calcular-frete button {
-    width: 25%; }
+    width: 25%;
+    padding: 0;
+    text-decoration: none; }
 
 .block-produto {
   margin: 20px 0;
@@ -4153,7 +4160,8 @@ fieldset {
       text-transform: uppercase;
       font-weight: 700; }
   .cart-collaterals .btn-comprar {
-    margin: 30px 0; }
+    margin: 30px 0;
+    text-decoration: none; }
   .cart-collaterals .txt-obs {
     font-size: .9rem;
     text-align: center;

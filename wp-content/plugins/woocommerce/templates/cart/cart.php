@@ -297,7 +297,7 @@ wc_print_notices(); ?>
                
             ?>
 
-                <?php 
+                <?php
 
                     if(isset($cart_item['sold_by']) && !in_array($cart_item['sold_by'], $sold_by) ): 
                         $sold_by[] = $cart_item['sold_by']; 

@@ -101,6 +101,8 @@
 
 <title><?php echo $titulo; ?></title>
 
+<?php wp_head(); ?>
+
 <!-- CSS -->
 <!--<link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri(); ?>/assets/css/woocommerce/woocommerce.css" media="screen" />-->
 

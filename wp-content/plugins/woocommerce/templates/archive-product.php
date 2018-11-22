@@ -37,7 +37,7 @@ do_action( 'woocommerce_before_main_content' );
 			<div class="col-3">				
 				<div class="filtro-cat">
 
-					<h3>Filtre sua pesquisa</h3>
+					<h3>Filtre sua pesquisa</h3><?php /*
 					<ul class="atributo-filtro">
 						<li>							
 							<span class="tit-atributo">Volume</span>
@@ -178,7 +178,7 @@ do_action( 'woocommerce_before_main_content' );
 								</li>
 							</ul>
 						</li>
-					</ul>
+					</ul> */?>
 
 				</div>
 			</div>

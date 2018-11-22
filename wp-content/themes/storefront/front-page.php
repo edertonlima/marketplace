@@ -2,7 +2,7 @@
 
 <?php get_template_part( 'slide' ); ?>	
 
-<?php get_template_part( 'categorias' ); ?>
+<?php get_template_part( 'seguimentos' ); ?>
 
 <?php get_template_part( 'destaque-semana' ); ?>
 

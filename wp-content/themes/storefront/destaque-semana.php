@@ -32,7 +32,9 @@
 					<span class="medida">60mm x 50mm</span>
 					<span class="quantidade">200 unidades por caixa</span>
 					<span class="preco">
-						<span class="valor <?php if($product->sale_price != ''){ echo 'sale'; } ?>"><?php echo $product->get_price_html(); ?></span>
+						<span class="valor <?php if($product->sale_price != ''){ echo 'sale'; } ?>">
+							<?php echo $product->get_price_html(); ?>
+						</span>
 						<span class="det">cada caixa</span>
 					</span>
 				</a>
